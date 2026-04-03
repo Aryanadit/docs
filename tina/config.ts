@@ -28,6 +28,31 @@ export default defineConfig({
           include: '**/*',
           exclude: 'index',
         },
+
+        // ✅ ADDED THIS BLOCK
+        ui: {
+          filename: {
+            slugify: (values) => {
+              const rawCategory = values?.category || 'uncategorized';
+              const title = values?.title || 'new-post';
+
+              const categorySlug = rawCategory
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+
+              const titleSlug = title
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/^-+|-+$/g, '');
+
+              return `${categorySlug}/${titleSlug}`;
+            },
+          },
+        },
+
         fields: [
           {
             type: 'string',

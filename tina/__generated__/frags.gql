@@ -1,9 +1,9 @@
 fragment PostParts on Post {
   __typename
   title
-  category
   description
   author
   date
+  category
   body
 }

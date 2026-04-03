@@ -38,11 +38,6 @@ export default defineConfig({
           },
           {
             type: 'string',
-            name: 'category',
-            label: 'Category',
-          },
-          {
-            type: 'string',
             name: 'description',
             label: 'Description',
           },
@@ -55,6 +50,11 @@ export default defineConfig({
             type: 'datetime',
             name: 'date',
             label: 'Date',
+          },
+          {
+            type: 'string',
+            name: 'category',
+            label: 'Category',
           },
           {
             type: 'rich-text',

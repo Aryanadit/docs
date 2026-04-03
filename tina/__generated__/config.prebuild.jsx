@@ -35,11 +35,6 @@ var config_default = defineConfig({
           },
           {
             type: "string",
-            name: "category",
-            label: "Category"
-          },
-          {
-            type: "string",
             name: "description",
             label: "Description"
           },
@@ -52,6 +47,11 @@ var config_default = defineConfig({
             type: "datetime",
             name: "date",
             label: "Date"
+          },
+          {
+            type: "string",
+            name: "category",
+            label: "Category"
           },
           {
             type: "rich-text",

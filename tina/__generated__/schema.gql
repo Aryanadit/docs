@@ -89,10 +89,10 @@ union DocumentNode = Post | Folder
 
 type Post implements Node & Document {
   title: String!
-  category: String
   description: String
   author: String
   date: String
+  category: String
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -122,10 +122,10 @@ input RichTextFilter {
 
 input PostFilter {
   title: StringFilter
-  category: StringFilter
   description: StringFilter
   author: StringFilter
   date: DatetimeFilter
+  category: StringFilter
   body: RichTextFilter
 }
 
@@ -161,10 +161,10 @@ input DocumentMutation {
 
 input PostMutation {
   title: String
-  category: String
   description: String
   author: String
   date: String
+  category: String
   body: JSON
 }
 

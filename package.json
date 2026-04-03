@@ -10,16 +10,18 @@
     "start": "vitepress dev"
   },
   "dependencies": {
-    "@stackblitz/sdk": "^1.9.0"
+    "@stackblitz/sdk": "^1.9.0",
+    "tinacms": "^3.7.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
+    "@tinacms/cli": "^2.2.1",
+    "@types/node": "^20.19.38",
     "@vue/tsconfig": "^0.5.1",
     "dotenv": "^16.4.5",
     "markdown-it-footnote": "^3.0.3",
     "prettier": "^3.2.5",
     "sass": "^1.72.0",
-    "vitepress": "~1.0.2"
+    "vitepress": "^1.6.4"
   },
   "prettier": {
     "printWidth": 100,

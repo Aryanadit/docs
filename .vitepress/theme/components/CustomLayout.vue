@@ -1,27 +1,16 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme';
-
+import { useRoute } from 'vitepress';
+import Breadcrumb from './Breadcrumb.vue';
 const { Layout } = DefaultTheme;
-
-import Feedback from '@theme/components/Feedback/Feedback.vue';
-import Chatlio from '@theme/components/Chatlio.vue';
-import NavBarAuthButtons from '@theme/components/AuthButtons/NavBarAuthButtons.vue';
-import NavScreenAuthButtons from '@theme/components/AuthButtons/NavScreenAuthButtons.vue';
+const route = useRoute();
+const showBreadcrumb = route.path.startsWith('/blog/');
 </script>
 
 <template>
   <Layout>
-    <template #nav-bar-content-after>
-      <NavBarAuthButtons />
-    </template>
-    <template #doc-footer-before>
-      <ClientOnly>
-        <Feedback />
-        <Chatlio />
-      </ClientOnly>
-    </template>
-    <template #nav-screen-content-after>
-      <NavScreenAuthButtons />
+    <template #doc-before>
+      <Breadcrumb v-if="showBreadcrumb" />
     </template>
   </Layout>
 </template>

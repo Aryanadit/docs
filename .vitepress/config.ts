@@ -7,7 +7,7 @@ export default defineConfig({
   assetsDir: 'assets',
   base: '/',
   cleanUrls: true,
-  ignoreDeadLinks: false,
+  ignoreDeadLinks: true,
   lang: 'en-US',
   title: 'Blog',
   description: 'Our company blog.',

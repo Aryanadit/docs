@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "build",
+  "outputDirectory": ".vitepress/dist",
   "framework": null,
   "rewrites": [
     { "source": "/admin", "destination": "/admin/index.html" },

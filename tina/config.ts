@@ -52,12 +52,6 @@ export default defineConfig({
             label: "Date",
           },
           {
-            type: "string",
-            name: "category",
-            label: "Category",
-            options: ["getting-started", "tutorials", "announcements"],
-          },
-          {
             type: "rich-text",
             name: "body",
             label: "Body",

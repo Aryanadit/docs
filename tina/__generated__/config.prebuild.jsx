@@ -65,7 +65,7 @@ var config_default = defineConfig({
             label: "Date",
             //required: true,
             ui: {
-              defaultValue: (/* @__PURE__ */ new Date()).toISOString()
+              defaultValue: "2026-01-01T00:00:00.000Z"
             }
           },
           {

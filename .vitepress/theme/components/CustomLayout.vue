@@ -30,11 +30,18 @@ const { frontmatter } = useData();
 const isBlogPost = computed(
   () => route.path.includes('/blog/') && route.path.split('/').filter(Boolean).length >= 3,
 );
+// const editUrl = computed(() => {
+//   const parts = route.path.split('/').filter(Boolean);
+//   const category = parts[1];
+//   const title = parts[2];
+//   return `http://localhost:4001/admin/index.html#/collections/edit/post/${category}/${title}`;
+// });
+
 const editUrl = computed(() => {
   const parts = route.path.split('/').filter(Boolean);
   const category = parts[1];
   const title = parts[2];
-  return `http://localhost:4001/admin/index.html#/collections/edit/post/${category}/${title}`;
+  return `/admin/index.html#/collections/edit/post/${category}/${title}`;
 });
 
 console.log('route.path:', route.path, 'parts:', route.path.split('/').filter(Boolean).length);

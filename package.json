@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "tinacms build && vitepress build && mkdir -p build/admin && cp -r public/admin/* build/admin",
+    "build": "tinacms build --skip-cloud-checks && vitepress build",
     "dev": "vitepress dev",
     "format": "prettier --write '**/*.{js,ts,css,scss}'",
     "serve": "vitepress serve",

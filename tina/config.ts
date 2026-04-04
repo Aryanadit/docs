@@ -28,9 +28,11 @@ export default defineConfig({
           include: '**/*',
           exclude: 'index',
         },
-
-        // ✅ ADDED THIS BLOCK
         ui: {
+          allowedActions: {
+            create: true,
+            delete: true,
+          },
           filename: {
             slugify: (values) => {
               const rawCategory = values?.category || 'uncategorized';
@@ -48,7 +50,7 @@ export default defineConfig({
                 .replace(/[^a-z0-9]+/g, '-')
                 .replace(/^-+|-+$/g, '');
 
-              return `${categorySlug}/${titleSlug}`;
+              return `${categorySlug}/${titleSlug}.md`;
             },
           },
         },

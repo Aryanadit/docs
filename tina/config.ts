@@ -24,18 +24,22 @@ export default defineConfig({
         label: 'Blog Posts',
         path: 'blog',
         format: 'md',
+
         match: {
           include: '**/*',
           exclude: 'index',
         },
+
         ui: {
           allowedActions: {
             create: true,
             delete: true,
           },
+
+          // 🔥 Folder-based structure
           filename: {
-            slugify: (values) => {
-              const rawCategory = values?.category || 'uncategorized';
+            slugify: (values: any) => {
+              const rawCategory = values?.categoryLabel || 'uncategorized';
               const title = values?.title || 'new-post';
 
               const categorySlug = rawCategory
@@ -50,7 +54,7 @@ export default defineConfig({
                 .replace(/[^a-z0-9]+/g, '-')
                 .replace(/^-+|-+$/g, '');
 
-              return `${categorySlug}/${titleSlug}.md`;
+              return `${categorySlug}/${titleSlug}`;
             },
           },
         },
@@ -77,12 +81,35 @@ export default defineConfig({
             type: 'datetime',
             name: 'date',
             label: 'Date',
+            //required: true,
+            ui: {
+              defaultValue: new Date().toISOString(),
+            },
+          },
+
+          {
+            type: 'string',
+            name: 'categoryLabel',
+            label: 'Category',
+            required: true,
           },
           {
             type: 'string',
             name: 'category',
-            label: 'Category',
+            label: 'Category (slug)',
+            ui: {
+              component: 'hidden',
+              parse: (_: any, values: any) => {
+                return values?.categoryLabel
+                  ?.toLowerCase()
+                  .trim()
+                  .replace(/[^a-z0-9]+/g, '-')
+                  .replace(/^-+|-+$/g, '');
+              },
+            },
           },
+
+          // ✅ BODY (Markdown + images)
           {
             type: 'rich-text',
             name: 'body',

@@ -19,6 +19,16 @@ export default defineConfig({
     sidebar: {
       '/blog/': blogSidebar,
     },
+    search: {
+      provider: 'local',
+    },
+    lastUpdated: {
+      text: 'Last updated',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'short',
+      },
+    },
     docFooter: {
       prev: 'Previous',
       next: 'Next',

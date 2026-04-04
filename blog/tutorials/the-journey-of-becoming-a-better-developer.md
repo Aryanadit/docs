@@ -6,7 +6,7 @@ date: 2026-04-04T13:45:15.840Z
 categoryLabel: tutorials
 ---
 
-🌱 Introduction
+## 🌱 Introduction
 
 Every developer starts somewhere. Whether you're writing your first Hello World or building complex systems, the journey is full of learning, challenges, and growth.
 
@@ -24,7 +24,7 @@ Opens doors to high-paying careers
 
 Allows you to build your own ideas
 
-🛠️ Essential Skills Every Developer Should Learn
+## 🛠️ Essential Skills Every Developer Should Learn
 
 1\. Data Structures & Algorithms
 
@@ -60,7 +60,7 @@ Debugging issues for hours
 
 Imposter syndrome
 
-Lack of consistency
+## Lack of consistency
 
 👉 Tip: Focus on one thing at a time and stay consistent.
 

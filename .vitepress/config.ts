@@ -12,6 +12,7 @@ export default defineConfig({
   title: 'Blog',
   description: 'Our company blog.',
   lastUpdated: true,
+  srcExclude: ['**/README.md'],
 
   themeConfig: {
     siteTitle: 'Blog',

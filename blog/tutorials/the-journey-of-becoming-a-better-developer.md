@@ -8,6 +8,8 @@ categoryLabel: tutorials
 
 ## 🌱 Introduction
 
+![](/uploads/how-is-this-wallpaper-share-yours-too-v0-upnv42swwrsg1.webp)
+
 Every developer starts somewhere. Whether you're writing your first Hello World or building complex systems, the journey is full of learning, challenges, and growth.
 
 💡 Why Learning to Code Matters

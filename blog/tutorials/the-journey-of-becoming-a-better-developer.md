@@ -10,6 +10,8 @@ categoryLabel: tutorials
 
 ![](/uploads/how-is-this-wallpaper-share-yours-too-v0-upnv42swwrsg1.webp)
 
+![](https://firebasestorage.googleapis.com/v0/b/measuremate-blog-12345.firebasestorage.app/o/images%2Ftina%2Feditor%2F1775607289613-backiee-241672-landscape.jpg?alt=media)
+
 Every developer starts somewhere. Whether you're writing your first Hello World or building complex systems, the journey is full of learning, challenges, and growth.
 
 💡 Why Learning to Code Matters

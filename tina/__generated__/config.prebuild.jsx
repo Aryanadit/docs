@@ -1,5 +1,46 @@
 // tina/config.ts
 import { defineConfig } from "tinacms";
+
+// tina/media.ts
+var CustomMediaStore = class {
+  accept = "image/*";
+  async persist(files) {
+    const uploaded = await Promise.all(
+      files.map(async (file) => {
+        const formData = new FormData();
+        formData.append("image", file.file);
+        formData.append("category", "tina");
+        formData.append("slug", "editor");
+        const res = await fetch(
+          "https://uploadimage-134044598052.europe-west1.run.app/upload-image",
+          {
+            method: "POST",
+            body: formData
+          }
+        );
+        const data = await res.json();
+        return {
+          id: data.url,
+          type: "file",
+          filename: file.file.name,
+          directory: "",
+          src: data.url
+        };
+      })
+    );
+    return uploaded;
+  }
+  async delete() {
+    return;
+  }
+  async list() {
+    return {
+      items: []
+    };
+  }
+};
+
+// tina/config.ts
 var config_default = defineConfig({
   branch: process.env.GITHUB_BRANCH || "main",
   clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
@@ -9,9 +50,8 @@ var config_default = defineConfig({
     publicFolder: "public"
   },
   media: {
-    tina: {
-      mediaRoot: "uploads",
-      publicFolder: "public"
+    loadCustomStore: async () => {
+      return CustomMediaStore;
     }
   },
   schema: {

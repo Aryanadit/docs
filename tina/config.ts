@@ -1,4 +1,5 @@
 import { defineConfig } from 'tinacms';
+import CustomMediaStore from './media';
 
 export default defineConfig({
   branch: process.env.GITHUB_BRANCH || 'main',
@@ -11,9 +12,8 @@ export default defineConfig({
   },
 
   media: {
-    tina: {
-      mediaRoot: 'uploads',
-      publicFolder: 'public',
+    loadCustomStore: async () => {
+      return CustomMediaStore;
     },
   },
 

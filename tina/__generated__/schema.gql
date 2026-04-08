@@ -94,7 +94,6 @@ type Post implements Node & Document {
   date: String
   categoryLabel: String!
   category: String
-  videoUrl: String
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -129,7 +128,6 @@ input PostFilter {
   date: DatetimeFilter
   categoryLabel: StringFilter
   category: StringFilter
-  videoUrl: StringFilter
   body: RichTextFilter
 }
 
@@ -170,7 +168,6 @@ input PostMutation {
   date: String
   categoryLabel: String
   category: String
-  videoUrl: String
   body: JSON
 }
 

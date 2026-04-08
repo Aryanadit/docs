@@ -6,6 +6,5 @@ fragment PostParts on Post {
   date
   categoryLabel
   category
-  videoUrl
   body
 }

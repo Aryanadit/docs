@@ -125,11 +125,11 @@ var config_default = defineConfig({
               }
             }
           },
-          {
-            type: "string",
-            name: "videoUrl",
-            label: "YouTube Video URL"
-          },
+          // {
+          //   type: 'string',
+          //   name: 'videoUrl',
+          //   label: 'YouTube Video URL',
+          // },
           {
             type: "rich-text",
             name: "body",

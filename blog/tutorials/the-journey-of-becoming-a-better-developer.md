@@ -7,7 +7,8 @@ categoryLabel: tutorials
 ---
 
 ## 🌱 Introduction
-![](https://firebasestorage.googleapis.com/v0/b/measuremate-blog-12345.firebasestorage.app/o/images%2Ftina%2Feditor%2F1775607289613-backiee-241672-landscape.jpg?alt=media)
+
+![](https://firebasestorage.googleapis.com/v0/b/measuremate-blog-12345.firebasestorage.app/o/images%2Ftina%2Feditor%2F1775608432361-wallhaven-e89l8k.jpg?alt=media)![](https://firebasestorage.googleapis.com/v0/b/measuremate-blog-12345.firebasestorage.app/o/images%2Ftina%2Feditor%2F1775607289613-backiee-241672-landscape.jpg?alt=media)
 
 Every developer starts somewhere. Whether you're writing your first Hello World or building complex systems, the journey is full of learning, challenges, and growth.
 

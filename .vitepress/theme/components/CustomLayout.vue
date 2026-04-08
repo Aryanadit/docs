@@ -21,7 +21,15 @@ const showBreadcrumb = route.path.startsWith('/blog/');
 import DefaultTheme from 'vitepress/theme';
 import { useRoute, useData } from 'vitepress';
 import Breadcrumb from './Breadcrumb.vue';
-import { computed } from 'vue';
+import { computed, ref, onMounted } from 'vue';
+import '../firebase';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  type User,
+} from 'firebase/auth';
 
 const { Layout } = DefaultTheme;
 const route = useRoute();
@@ -30,6 +38,7 @@ const { frontmatter } = useData();
 const isBlogPost = computed(
   () => route.path.includes('/blog/') && route.path.split('/').filter(Boolean).length >= 3,
 );
+
 // const editUrl = computed(() => {
 //   const parts = route.path.split('/').filter(Boolean);
 //   const category = parts[1];
@@ -45,15 +54,100 @@ const editUrl = computed(() => {
 });
 
 console.log('route.path:', route.path, 'parts:', route.path.split('/').filter(Boolean).length);
+
+// 🔐 AUTH STATE
+const user = ref<User | null>(null);
+const isAdmin = ref(false);
+
+const allowedUsers = [
+  'aryanadit1407@gmail.com', // 🔥 your admin email
+];
+
+onMounted(() => {
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (u: User | null) => {
+    user.value = u;
+
+    if (u && allowedUsers.includes(u.email || '')) {
+      isAdmin.value = true;
+    } else {
+      isAdmin.value = false;
+    }
+  });
+});
+
+// 🔐 LOGIN FUNCTION
+const login = async () => {
+  const email = prompt('Enter email');
+  const password = prompt('Enter password');
+
+  if (!email || !password) return;
+
+  const auth = getAuth();
+
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+  } catch (err) {
+    alert('Login failed');
+    console.error(err);
+  }
+};
+
+// 🔐 LOGOUT FUNCTION
+const logout = async () => {
+  const auth = getAuth();
+  await signOut(auth);
+};
 </script>
+
 <template>
   <Layout>
     <template #doc-before>
       <Breadcrumb v-if="route.path.startsWith('/blog/')" />
     </template>
+
     <template #doc-footer-before>
-      <div v-if="isBlogPost" style="display: flex; gap: 0.5rem; margin-bottom: 1rem">
+      <div style="display: flex; gap: 0.6rem; margin-bottom: 1rem; align-items: center">
+        <!-- LOGIN -->
+        <button
+          v-if="!user"
+          @click="login"
+          style="
+            padding: 0.3rem 0.8rem;
+            background: #444;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+          "
+        >
+          🔐 Login
+        </button>
+
+        <!-- LOGOUT -->
+        <button
+          v-if="user"
+          @click="logout"
+          style="
+            padding: 0.3rem 0.8rem;
+            background: #666;
+            color: white;
+            border-radius: 6px;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+          "
+        >
+          🚪 Logout
+        </button>
+
+        <!-- EDIT BUTTON -->
         <a
+          v-if="isBlogPost && isAdmin"
           :href="editUrl"
           target="_blank"
           style="

@@ -4,13 +4,18 @@ import { defineConfig } from "tinacms";
 // tina/media.ts
 var CustomMediaStore = class {
   accept = "image/*";
-  async persist(files) {
+  async persist(files, options) {
+    const hash = window.location.hash;
+    const clean = hash.replace("#/", "");
+    const parts = clean.split("/");
+    const category = parts[3] || "general";
+    const slug = parts[4] || "post";
     const uploaded = await Promise.all(
       files.map(async (file) => {
         const formData = new FormData();
         formData.append("image", file.file);
-        formData.append("category", "tina");
-        formData.append("slug", "editor");
+        formData.append("category", category);
+        formData.append("slug", slug);
         const res = await fetch(
           "https://uploadimage-134044598052.europe-west1.run.app/upload-image",
           {

@@ -108,8 +108,11 @@ export default defineConfig({
               },
             },
           },
-
-          // ✅ BODY (Markdown + images)
+          {
+            type: 'string',
+            name: 'videoUrl',
+            label: 'YouTube Video URL',
+          },
           {
             type: 'rich-text',
             name: 'body',

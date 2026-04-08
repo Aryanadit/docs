@@ -4,6 +4,7 @@ description: asdfasdfa
 author: dsfasdfa
 date: 2026-04-04T13:45:15.840Z
 categoryLabel: tutorials
+videoUrl: 'https://www.youtube.com/watch?v=yALvgZi-84o&list=RDyALvgZi-84o&start_radio=1'
 ---
 
 ## 🌱 Introduction

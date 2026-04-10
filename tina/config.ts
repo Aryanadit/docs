@@ -21,8 +21,8 @@ export default defineConfig({
     collections: [
       {
         name: 'post',
-        label: 'Blog Posts',
-        path: 'blog',
+        label: 'Docs',
+        path: "docs",
         format: 'md',
 
         match: {

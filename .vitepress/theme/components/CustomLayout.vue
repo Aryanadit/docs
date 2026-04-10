@@ -36,7 +36,7 @@ const route = useRoute();
 const { frontmatter } = useData();
 
 const isBlogPost = computed(
-  () => route.path.includes('/blog/') && route.path.split('/').filter(Boolean).length >= 3,
+  () => route.path.includes('/docs/') && route.path.split('/').filter(Boolean).length >= 3,
 );
 
 // const editUrl = computed(() => {
@@ -104,7 +104,7 @@ const logout = async () => {
 <template>
   <Layout>
     <template #doc-before>
-      <Breadcrumb v-if="route.path.startsWith('/blog/')" />
+      <Breadcrumb v-if="route.path.startsWith('/docs/')" />
     </template>
 
     <template #doc-footer-before>

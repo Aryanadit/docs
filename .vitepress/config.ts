@@ -15,10 +15,10 @@ export default defineConfig({
   srcExclude: ['**/README.md'],
 
   themeConfig: {
-    siteTitle: 'Blog',
-    nav: [{ text: 'Blog', link: '/blog/' }],
+    siteTitle: 'Docs',
+    nav: [{ text: 'Docs', link: '/docs/'}],
     sidebar: {
-      '/blog/': blogSidebar,
+      '/docs/': blogSidebar,
     },
     search: {
       provider: 'local',

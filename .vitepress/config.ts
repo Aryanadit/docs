@@ -9,20 +9,26 @@ export default defineConfig({
   cleanUrls: true,
   ignoreDeadLinks: true,
   lang: 'en-US',
-  title: 'Blog',
-  description: 'Our company blog.',
+
+  title: 'Docs',
+  description: 'MeasureMate documentation.',
+
   lastUpdated: true,
   srcExclude: ['**/README.md'],
 
   themeConfig: {
     siteTitle: 'Docs',
-    nav: [{ text: 'Docs', link: '/docs/'}],
+
+    nav: [{ text: 'Docs', link: '/docs/' }],
+
     sidebar: {
       '/docs/': blogSidebar,
     },
+
     search: {
       provider: 'local',
     },
+
     lastUpdated: {
       text: 'Last updated',
       formatOptions: {
@@ -30,6 +36,7 @@ export default defineConfig({
         timeStyle: 'short',
       },
     },
+
     docFooter: {
       prev: 'Previous',
       next: 'Next',

@@ -6,6 +6,6 @@ date: 2026-04-04T00:00:00.000Z
 categoryLabel: announcements
 ---
 
-## We Are Live
+## We Are Live v2
 
 MeasureMate is officially launched. Welcome aboard!

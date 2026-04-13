@@ -16,3 +16,4 @@ build
 # Netlify testing
 .netlify
 .env
+.DS_Store

@@ -5,7 +5,7 @@ export default defineConfig({
   srcDir: './',
   outDir: './build',
   assetsDir: 'assets',
-  base: '/docs',
+  base: '/docs/',
   cleanUrls: true,
   ignoreDeadLinks: true,
   lang: 'en-US',

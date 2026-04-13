@@ -22,7 +22,7 @@ export default defineConfig({
       {
         name: 'post',
         label: 'Docs',
-        path: "docs",
+        path: 'docs',
         format: 'md',
 
         match: {
